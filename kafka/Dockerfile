@@ -18,6 +18,9 @@ RUN apt-get update && \
 
 ADD scripts/start-kafka.sh /usr/bin/start-kafka.sh
 
+# Changes to default kafka server config
+ADD server.properties /opt/kafka_2.11-0.11.0.1/config/server.properties
+
 # Supervisor config
 ADD supervisor/kafka.conf supervisor/zookeeper.conf /etc/supervisor/conf.d/
 
