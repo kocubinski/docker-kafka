@@ -15,12 +15,22 @@ in the same container. This means:
 * No dependency on an external Zookeeper host, or linking to another container
 * Zookeeper and Kafka are configured to work together out of the box
 
-Run
+Installation
 ---
+1) Install Virtualbox http://download.virtualbox.org/virtualbox/5.2.0/VirtualBox-5.2.0-118431-OSX.dmg
+2) ```bash
+    docker-machine create -d "virtualbox" default
+    ```
+    
+3) Once completed, add the following line to your `.bash_profile`, `.bashrc`, `.zshrc`, or similar.
+    ```bash
+    eval $(docker-machine env)
+    ```
+4) Execute the command `source ~/.bash_profile` (or similar).  Or just start a new shell session.
+5) `./run.sh`
 
-```bash
-docker run -p 2181:2181 -p 9092:9092 --env ADVERTISED_HOST=`docker-machine ip \`docker-machine active\`` --env ADVERTISED_PORT=9092 kocubinski/kafka
-```
+Test
+---
 
 ```bash
 export KAFKA=`docker-machine ip \`docker-machine active\``:9092
