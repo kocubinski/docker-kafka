@@ -1,0 +1,22 @@
+* docker-kafka
+  Runs two docker containers (zookeeper and kafka).  Networking provided by docker
+  compose.
+
+** Usage
+**** Start
+#+BEGIN_SRC 
+docker-compose up
+#+END_SRC
+
+or 
+
+#+BEGIN_SRC 
+docker-compose up -d 
+#+END_SRC
+
+to run in the background.
+
+**** Stop
+#+BEGIN_SRC 
+docker compose down
+#+END_SRC
